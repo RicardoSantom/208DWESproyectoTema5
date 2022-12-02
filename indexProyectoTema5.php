@@ -36,19 +36,19 @@
                         <td><span>scripts.~ </span>Borrado usuario + DB</td>
                         <td><a href="mostrarcodigo/BorraDAW208DBDepartamentos.php">Mostrar</a></td>
                         <td><a href="mostrarcodigo/mostrarBorrarDB.php">Mostrar</a></td>
-                        <td></td>
+                        <td><a href="mostrarcodigo/BorraDAW208DBDepartamentos.php">Mostrar</a></td>
                     </tr>
                     <tr>
                         <td><span>scripts.~ </span>Creación usuario + DB</td>
                         <td><a href="mostrarcodigo/CreaDAW208DBDepartamentos.php">Mostrar</a></td>
                         <td><a href="mostrarcodigo/mostrarCrearDB.php">Mostrar</a></td>
-                        <td></td>
+                        <td><a href="mostrarcodigo/CreaDAW208DBDepartamentos.php">Mostrar</a></td>
                     </tr>
                     <tr>
                         <td><span>scripts.~ </span>Carga inicial de datos</td>
                         <td><a href="mostrarcodigo/CargaInicialDAW208DBDepartamentos.php">Mostrar</a></td>
                         <td><a href="mostrarcodigo/mostrarCargaInicialDB.php">Mostrar</a></td>
-                        <td></td>
+                         <td><a href="mostrarcodigo/CargaInicialDAW208DBDepartamentos.php">Mostrar</a></td>
                     </tr>
                      <tr><th colspan="4"><h3>FICHERO CONFIGURACIÓN</h3></th></tr>
                     <tr>

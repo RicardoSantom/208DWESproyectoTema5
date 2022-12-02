@@ -22,12 +22,12 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
             header('HTTP/1.0 401 Unauthorized');
             echo 'Se ha cancelado el inicio de sesión';
             exit;
-        } else {
+        } /*else {
             $queryActualizacionNumConexiones = $miDB->query($actualizacionNumConexiones);
             echo "Bienvenido $_SERVER[PHP_AUTH_USER] <br/>";
             echo "Has entrado a la aplicacion $oConsultaPorCodigo->T01_NumConexiones veces <br/>";
             echo "Te has conectado por última vez $oConsultaPorCodigo->T01_FechaHoraUltimaConexion";
-        }
+        }*/
     } catch (PDOException $excepcion) {
         echo 'Error: ' . $excepcion->getMessage() . "<br>";
         echo 'Código de error: ' . $excepcion->getCode() . "<br>";
