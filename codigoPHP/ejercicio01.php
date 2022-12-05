@@ -4,7 +4,7 @@ if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_USER']!='admin' || $
     header('HTTP/1.0 401 Acceso no autorizado');
     echo '<body style="background-image:url(../webroot/images/cancelar.png); background-repeat:no-repeat;background-position: center;"></body>';
     echo '<h1 style="text-align:center;color:orange;font-family:sans-serif;margin-top:2rem">Ha cancelado su autenticación</h1>';
-    exit;
+    exit();
 } else {
     ?>
 <!DOCTYPE html>

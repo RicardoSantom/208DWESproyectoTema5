@@ -1,25 +1,32 @@
 <?php
+/**
+ * @author Ricardo Santiago Tomé Ricardo SanTom en Github<https://github.com/RicardoSantom>
+ * @version 1.0
+ * @since 20/11/2022
+ */
 //Comprobación de si el usuario ha tecleado
 if (!isset($_SERVER['PHP_AUTH_USER'])) {
-    header('WWW-Authenticate: Basic realm="Mi dominio"');
-    header('HTTP/1.0 401 Unauthorized');
+    header('WWW-Authenticate: Basic realm="Control de acceso a ejercicio01.php"');
+    header('HTTP/1.0 401  Acceso no autorizado');
     echo 'Se ha cancelado el inicio de sesión';
     die;
 } else {
     try {
+        //Incluyendo fichero configuración DB
         require_once '../conf/confDB.php';
-        $consultaPorCodigo = <<< sq2
+        //Variable para guardar consulta de codigo
+        $SQLConsultaPorCodigo = <<< QUERY
             select * from T01_Usuario where T01_CodUsuario='$_SERVER[PHP_AUTH_USER]';
-        sq2;
-        $actualizacionNumConexiones = <<< sq3
+        QUERY;
+        /*$actualizacionNumConexiones = <<< QUERY1
             update T01_Usuario set T01_NumConexiones=T01_NumConexiones+1,T01_FechaHoraUltimaConexion=now() where T01_CodUsuario='$_SERVER[PHP_AUTH_USER]';
-        sq3;
+        QUERY1;*/
         $miDB = new PDO(DSN, NOMBREUSUARIO, PASSWORD);
-        $queryConsultaPorCodigo = $miDB->query($consultaPorCodigo);
+        $queryConsultaPorCodigo = $miDB->query($SQLConsultaPorCodigo);
         $oConsultaPorCodigo = $queryConsultaPorCodigo->fetchObject();
         if (!$oConsultaPorCodigo || $oConsultaPorCodigo->T01_Password != hash('sha256', ($_SERVER['PHP_AUTH_USER'] . $_SERVER['PHP_AUTH_PW']))) {
-            header('WWW-Authenticate: Basic realm="Mi dominio"');
-            header('HTTP/1.0 401 Unauthorized');
+            header('WWW-Authenticate: Basic realm="Control de acceso a ejercicio01.php"');
+            header('HTTP/1.0 401  Acceso no autorizado');
             echo 'Se ha cancelado el inicio de sesión';
             exit;
         } /*else {
